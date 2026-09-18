@@ -1,0 +1,8 @@
+{
+  "name": "jeverything-gateway-examples",
+  "private": true,
+  "type": "module",
+  "scripts": { "typecheck": "tsc --noEmit", "test": "tsx --test *.test.ts" },
+  "dependencies": { "ai": "7.0.105", "@ai-sdk/gateway": "4.0.85" },
+  "devDependencies": { "typescript": "5.9.3", "tsx": "4.20.6", "@types/node": "22.19.0" }
+}

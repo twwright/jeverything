@@ -17,3 +17,9 @@ Jev is TypeSafe AI's typed decision model, not a code-generation model. This pro
 ## License
 
 MIT. Copyright 2026 Thomas Wright (twwright).
+
+## Implementation and research
+
+The full skill includes discovery, scoped design, Gateway/native integration, and evaluation references. Start with the [Gateway example](examples/gateway/README.md) or [native SDK examples](examples/native/README.md).
+
+Research was reconciled on September 18, 2026. Read the [contract reconciliation](research/reconciliation.md), [Gateway audit](research/gateway.md), [API/SDK audit](research/api-sdk.md), [primitives and cookbooks](research/semantics-patterns.md), [community review](research/community.md), and [console observations](research/console.md). Mocked tests and source inspection are not live model-quality measurements.

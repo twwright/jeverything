@@ -4,12 +4,21 @@ description: Find evidence-backed opportunities to use TypeSafe AI's Jev in an e
 license: MIT
 metadata:
   author: twwright
-  version: 0.1.0
+  version: 1.0.0
 ---
 
 # Jeverything
 
 Find where Jev's typed judgments can improve the current application. Jev is TypeSafe AI's System One model: supplied state and questions produce decisions and probability distributions. It does not generate application code, prose, or reasoning explanations. The coding agent writes the integration; Jev evaluates application state.
+
+Load only the reference needed for the current stage:
+
+- [Discovery and design](references/design.md) for repository inspection, state construction, answer spaces, and decomposition
+- [Use-case map](references/use-cases.md) for cookbook patterns and concrete implementation opportunities beyond classification
+- [Integration](references/integration.md) for Gateway, HTTP, native SDKs, exact field mappings, errors, and version-sensitive behavior
+- [Evaluation](references/evaluation.md) for labeled tests, thresholds, calibration, known limitations, rollout, and diagnosis
+
+References were verified September 18, 2026. Refresh changing contracts before making production changes.
 
 ## Discover opportunities in the current repository
 
