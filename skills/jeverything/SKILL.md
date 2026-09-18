@@ -4,7 +4,7 @@ description: Find evidence-backed opportunities to use TypeSafe AI's Jev in an e
 license: MIT
 metadata:
   author: twwright
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Jeverything
@@ -47,7 +47,7 @@ Prefer Vercel AI Gateway. Before implementation, verify the current [Gateway eva
 
 Ask independent questions together over shared relevant state. They cannot consume each other's answers; use another request when evidence or options depend on an earlier result. Define complete answer spaces and concrete criteria. Keep thresholds and policy in code. Evaluate thresholds on labeled examples and the cost of errors; example thresholds are not production defaults. Confidence does not establish workflow correctness or authorize an action.
 
-Keep credentials server-side. Available credentials are not authorization for live inference. Obtain explicit approval for live model calls and the data sent unless the user already explicitly requested that live run; implementation and ordinary tests should work offline. Do not auto-enable hosted inference merely because an environment variable exists.
+Keep credentials server-side. Available credentials are not authorization for live inference. Obtain explicit approval for live model calls and the data sent unless the user already explicitly requested that live run; implementation and ordinary tests should work offline. Do not auto-enable hosted inference merely because an environment variable exists. Require explicit live mode at the application entrypoint and evaluator boundary; verify the default path stays offline with a fake credential present and a provider-call spy. Disabling the evaluator only inside tests does not verify the application's default behavior.
 
 Preserve uncertainty in policy: a probability below a positive threshold is not evidence for the negative conclusion. Define positive, negative, and review bands when both conclusions affect the workflow. Never silently truncate evidence and then claim the original input was evaluated; reject oversized inputs or disclose selection and abstain when omitted evidence could change the answer.
 

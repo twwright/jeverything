@@ -4,7 +4,7 @@ Verified September 18, 2026.
 
 Public course: https://jeverything.vercel.app/courses/jev
 
-The course was implemented in the existing digdeep application. It includes 24 lessons, 104 chapters, 96 quiz questions with explanations for every option, 24 persistent workbooks, 69 glossary entries, and 73 sources. Estimated study time is 1,880 minutes (31 hours 20 minutes), including applied exercises. It covers state/question design, all three primitives, probability and policy, Gateway and native APIs/SDKs, evaluation, production operation, and a fictional support-workflow capstone.
+The course was implemented in the existing digdeep application and substantially edited after reader feedback. The first eight lessons now teach Jev from small standalone examples. Five curriculum stages separate fundamentals, primitives, implementation, operations, and the capstone; HarborDesk is introduced in the capstone rather than at the beginning. Four interactive components animate the request path, primitive distributions, state omissions, and probability policies. Optional workflow traces and advanced material are collapsed. It includes 24 lessons, 96 chapters, 88 quiz questions with explanations for every option, 24 persistent workbooks, 69 glossary entries, and 73 sources. Estimated study time is 1,280 minutes (21 hours 20 minutes), including applied exercises. It covers state/question design, all three primitives, probability and policy, Gateway and native APIs/SDKs, evaluation, production operation, and a fictional support-workflow capstone.
 
 ## Checks
 
@@ -13,7 +13,7 @@ The course was implemented in the existing digdeep application. It includes 24 l
 - `pnpm lint`: passed
 - `pnpm test`: 9 passed
 - `pnpm build`: passed; 53 static pages in the full local application
-- `pnpm test:e2e`: 22 passed across desktop and mobile, including every course route, browser runtime errors, horizontal overflow, progress persistence, imports/exports, quizzes, search, and disclosures
+- `pnpm test:e2e`: 30 passed in the full suite, plus 2 subsequent theme-contrast tests passed across desktop and mobile, including every course route, browser runtime errors, horizontal overflow, progress persistence, imports/exports, quizzes, search, and disclosures
 - Public Jev-only production build: passed, 32 static pages
 - Gateway example: typechecked; 6 mocked tests passed
 - Native JavaScript example: typechecked

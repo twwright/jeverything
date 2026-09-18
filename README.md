@@ -10,7 +10,7 @@ npx skills add twwright/jeverything --skill jeverything
 
 Invoke `/jeverything` (or `$jeverything` in Codex) in a repository to identify useful Jev decision boundaries. Ask it to compare scoped options or implement a selected workflow.
 
-The skill supports repository-grounded discovery, scoped recommendations, implementation, and evaluation. The companion [Jev engineering course](https://jeverything.vercel.app/courses/jev) contains 24 lessons, 96 quiz questions, persistent workbooks, a production capstone, and a source ledger. The estimated study time is 31 hours 20 minutes including exercises.
+The skill supports repository-grounded discovery, scoped recommendations, implementation, and evaluation. The companion [Jev engineering course](https://jeverything.vercel.app/courses/jev) contains 24 lessons, 88 quiz questions, persistent workbooks, a production capstone, and a source ledger. The estimated study time is 21 hours 20 minutes including exercises.
 
 Jev is TypeSafe AI's typed decision model, not a code-generation model. This project is independent of TypeSafe AI and Vercel.
 

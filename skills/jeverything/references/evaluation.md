@@ -117,6 +117,8 @@ Provide an `AbortSignal` deadline. Bound end-to-end attempts so overload does no
 
 Test policy separately with `Experimental_EvaluationMockModelV4` from `ai/test`. Cover positive, negative, and uncertain probabilities for every judgment, plus the first omitted candidate and a decisive fact beyond each input cap. Assert the final user-visible decision, not just that the request contains the expected fields. Exercise the actual SDK contract with a mock model. Default tests must remain offline even when credentials happen to be present.
 
+Test the actual default entrypoint with a fake credential and an injected transport spy that fails on any provider attempt. Assert zero provider calls without an explicit live mode. An evaluator override that disables inference only in tests can hide credential-triggered calls in the real application. Also verify direct evaluator invocation rejects live execution without opt-in; mock evaluation must remain possible without credentials.
+
 Label mocks clearly. Live model calls require explicit user authorization for that run and its data; credential availability is not approval. A credentialed smoke test proves connectivity and response shape, not calibration or production reliability. If the provider rejects access, report the boundary and stop rather than changing account policy or switching providers.
 
 ## Rollout and regression
