@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.vercel/
+.env*
+!.env.example
+.DS_Store
+.agents/
+.codex/
+research/raw/
+research/vendor/
