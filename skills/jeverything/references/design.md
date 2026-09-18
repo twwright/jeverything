@@ -42,6 +42,8 @@ Build one state containing the minimum current evidence needed by the questions.
 - For candidate selection, include every value Jev may select; an omitted candidate is unrecoverable
 - For reproducible workflows, retain a safe hash or version of state construction, questions, policy, and requested model
 
+Input limits must not silently change the evidence. If a document list or text exceeds a limit, reject it before inference, retrieve a documented subset, or report incompleteness and route to review. A covering document at position limit + 1 or decisive sentence beyond a character cap must not disappear behind a confident negative answer. A judgment about the supplied catalog cannot establish absence from the full knowledge base.
+
 Do not send secrets or sensitive user content merely because it is available in process memory. For local-only state, prefer a development-time or opt-in workflow over a silent server call.
 
 ## Choose the answer shape
@@ -78,6 +80,8 @@ Keep raw judgments separate from policy:
 5. Act, clarify, fall back, or send to review
 
 Confidence on Choice and Score summarizes distribution concentration. It is not permission to act and does not include retrieval, workflow, or downstream correctness. Native Noul and Gateway Boolean expose the yes probability without a separate confidence field.
+
+For Boolean/Noul policies with both positive and negative consequences, define separate positive and negative evidence bands with a review interval between them. For example, a high probability of reusability plus an uncertain probability of existing coverage should not become a claim that the resolution is uncovered. The exact band boundaries require labeled evaluation; they are not model defaults.
 
 Use code-owned weights only when dimensions legitimately compensate for one another. A rule such as "any severe violation blocks" needs separate conditions. Log the question/policy version and safe request metadata; avoid logging raw state by default.
 

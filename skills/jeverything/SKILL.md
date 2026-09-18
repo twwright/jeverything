@@ -4,7 +4,7 @@ description: Find evidence-backed opportunities to use TypeSafe AI's Jev in an e
 license: MIT
 metadata:
   author: twwright
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Jeverything
@@ -47,7 +47,11 @@ Prefer Vercel AI Gateway. Before implementation, verify the current [Gateway eva
 
 Ask independent questions together over shared relevant state. They cannot consume each other's answers; use another request when evidence or options depend on an earlier result. Define complete answer spaces and concrete criteria. Keep thresholds and policy in code. Evaluate thresholds on labeled examples and the cost of errors; example thresholds are not production defaults. Confidence does not establish workflow correctness or authorize an action.
 
-Keep credentials server-side. Validate untrusted inputs and responses, bound timeouts and retries, provide a safe failure path, and log requested/returned model and question versions without exposing sensitive state. Test missing evidence, ambiguous and adversarial input, boundary probabilities, service failures, and downstream mappings. Label mocked examples and unexecuted live calls honestly.
+Keep credentials server-side. Available credentials are not authorization for live inference. Obtain explicit approval for live model calls and the data sent unless the user already explicitly requested that live run; implementation and ordinary tests should work offline. Do not auto-enable hosted inference merely because an environment variable exists.
+
+Preserve uncertainty in policy: a probability below a positive threshold is not evidence for the negative conclusion. Define positive, negative, and review bands when both conclusions affect the workflow. Never silently truncate evidence and then claim the original input was evaluated; reject oversized inputs or disclose selection and abstain when omitted evidence could change the answer.
+
+Validate untrusted inputs and responses, bound timeouts and retries, provide a safe failure path, and log requested/returned model and question versions without exposing sensitive state. Test missing evidence, ambiguous and adversarial input, boundary probabilities, service failures, and downstream mappings. Label mocked examples and unexecuted live calls honestly.
 
 ## Evidence and freshness
 

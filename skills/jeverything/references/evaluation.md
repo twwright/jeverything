@@ -115,7 +115,9 @@ For Vercel AI Gateway through AI SDK:
 
 Provide an `AbortSignal` deadline. Bound end-to-end attempts so overload does not become retry amplification. Define behavior for timeout, rate limit, malformed response, absent probabilities from a non-Jev adapter, and partial downstream failure. Evaluation returns one complete result; there is no streaming or partial success.
 
-Test policy separately with `Experimental_EvaluationMockModelV4` from `ai/test`. Label mocks clearly. A credentialed smoke test proves connectivity and response shape, not calibration or production reliability.
+Test policy separately with `Experimental_EvaluationMockModelV4` from `ai/test`. Cover positive, negative, and uncertain probabilities for every judgment, plus the first omitted candidate and a decisive fact beyond each input cap. Assert the final user-visible decision, not just that the request contains the expected fields. Exercise the actual SDK contract with a mock model. Default tests must remain offline even when credentials happen to be present.
+
+Label mocks clearly. Live model calls require explicit user authorization for that run and its data; credential availability is not approval. A credentialed smoke test proves connectivity and response shape, not calibration or production reliability. If the provider rejects access, report the boundary and stop rather than changing account policy or switching providers.
 
 ## Rollout and regression
 
