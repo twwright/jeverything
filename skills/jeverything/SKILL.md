@@ -9,6 +9,7 @@ metadata:
 
 # Jeverything
 
+## Overview
 Find where Jev's typed judgments can improve the current application. Jev is TypeSafe AI's System One model: supplied state and questions produce decisions and probability distributions. It does not generate application code, prose, or reasoning explanations. The coding agent writes the integration; Jev evaluates application state.
 
 Load only the reference needed for the current stage:
